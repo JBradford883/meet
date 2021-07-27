@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, Row, Col, Button } from 'react-bootstrap';
+import moment from 'moment';
 
 class Event extends Component {
 
@@ -18,18 +19,22 @@ class Event extends Component {
   render() {
     const { event } = this.props;
 
+    const eventStart = moment(event.start.dateTime).format('MMMM Do YYYY, h:mm a');
+
     return (
+
       <Row className="justify-content-md-center ">
-        <Col md={8} className="">
+        <Col className="mr-2">
           <Card className="event border border-secondary rounded">
             <Card.Title className="name">{event.summary}</Card.Title>
-            <p className="eventStart">{event.start.dateTime} / {event.start.timeZone} </p>
-            <p className="locations">@ {event.summary} / {event.location}</p>
+            <p className="eventStart">{`${eventStart}`} / {event.start.timeZone} </p>
+            <p className="locations">@ {event.summary}</p>
+            <p className="locations">{event.location}</p>
 
             {
               this.state.showDetails && (
                 <div className="showEvent">
-                  <h4>About event:</h4>
+                  <h5>About event:</h5>
                   <p className="description">{event.description}</p>
                 </div>
               )
