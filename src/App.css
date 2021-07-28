@@ -94,11 +94,15 @@ input[type="number"] {
   width: 50%;
 }
 
+.show-event {
+  margin-top: 20px;
+}
+
 .details-btn {
   position: absolute;
-  right: 5px;
+  right: 10px;
   bottom: 5px;
-  padding: 5px 8px;
+  padding: 3px 10px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
@@ -218,5 +222,13 @@ input[type="number"] {
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .event-list-item {
+    width: 100%;
   }
 }

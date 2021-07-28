@@ -23,25 +23,25 @@ class Event extends Component {
 
     return (
 
-      <Row className="justify-content-md-center ">
-        <Col className="mr-2">
-          <Card className="event border border-secondary rounded">
+      <Row className="justify-content-md-center bg-dark ">
+        <Col >
+          <Card className="event m-3">
             <Card.Title className="name">{event.summary}</Card.Title>
-            <p className="eventStart">{`${eventStart}`} / {event.start.timeZone} </p>
-            <p className="locations">@ {event.summary}</p>
-            <p className="locations">{event.location}</p>
+            <p className="event-start"><b>Start Time:</b> {`${eventStart}`}</p>
+            <p className="event-start__timezone"><b>Time Zone:</b> {event.start.timeZone} </p>
+            <p className="locations"><b>Location:</b> {event.location}</p>
 
             {
               this.state.showDetails && (
-                <div className="showEvent">
-                  <h5>About event:</h5>
+                <div className="show-event">
+                  <h5><b>Event Details:</b></h5>
                   <p className="description">{event.description}</p>
                 </div>
               )
             }
             <div className="event-button">
               <Button
-                className='details-btn'
+                className='details-btn '
                 variant="dark"
                 onClick={() => this.handleDetails()}>
                 {!this.state.showDetails ? 'Show Details' : 'Hide Details'}
