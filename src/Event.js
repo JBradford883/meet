@@ -23,7 +23,7 @@ class Event extends Component {
 
     return (
 
-      <Row className="justify-content-md-center bg-dark ">
+      <Row className="">
         <Col >
           <Card className="event m-3">
             <Card.Title className="name">{event.summary}</Card.Title>

@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 import './nprogress.css';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   state = {
@@ -55,10 +55,32 @@ class App extends Component {
 
   render() {
     return (
-      <Container className="App">
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsLength={(value) => this.updateEventsLength(value)} />
-        <EventList events={this.state.events} />
+      <Container className="App bg-dark">
+
+        <Row className="mb-3 text-white">
+          <Col>
+            <h1 className="app-headline">Web Developer Events Near You</h1>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="CitySearchWrapper">
+            <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="NumberOfEventsWrapper text-white">
+            <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsLength={(value) => this.updateEventsLength(value)} />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col className="EventListWrapper">
+            <EventList events={this.state.events} />
+          </Col>
+        </Row>
+
       </Container>
     );
   }
