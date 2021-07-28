@@ -57,20 +57,20 @@ class App extends Component {
     return (
       <Container className="App bg-dark">
 
-        <Row className="mb-3 text-white">
+        <Row className="mb-3 text-white bg-white rounded p-2">
           <Col>
             <h1 className="app-headline">Web Developer Events Near You</h1>
           </Col>
         </Row>
 
         <Row>
-          <Col className="CitySearchWrapper">
+          <Col className="CitySearchWrapper mt-3">
             <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
           </Col>
         </Row>
 
         <Row>
-          <Col className="NumberOfEventsWrapper text-white">
+          <Col className="NumberOfEventsWrapper text-white" md={12}>
             <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsLength={(value) => this.updateEventsLength(value)} />
           </Col>
         </Row>
