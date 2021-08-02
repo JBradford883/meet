@@ -23,10 +23,10 @@ class Event extends Component {
 
     return (
 
-      <Row className="">
-        <Col >
+      <Row>
+        <Col>
           <Card className="event m-3">
-            <Card.Title className="name">{event.summary}</Card.Title>
+            <Card.Title className="event__Details">{event.summary}</Card.Title>
             <p className="event-start"><b>Start Time:</b> {`${eventStart}`}</p>
             <p className="event-start__timezone"><b>Time Zone:</b> {event.start.timeZone} </p>
             <p className="locations"><b>Location:</b> {event.location}</p>
@@ -41,7 +41,7 @@ class Event extends Component {
             }
             <div className="event-button">
               <Button
-                className='details-btn '
+                className='details-btn'
                 variant="dark"
                 onClick={() => this.handleDetails()}>
                 {!this.state.showDetails ? 'Show Details' : 'Hide Details'}

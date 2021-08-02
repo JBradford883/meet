@@ -57,9 +57,9 @@ class App extends Component {
     return (
       <Container className="App bg-dark">
 
-        <Row className="mb-3 text-white bg-white rounded p-2">
+        <Row className="mb-1 text-white">
           <Col>
-            <h1 className="app-headline">Web Developer Events Near You</h1>
+            <p className="app-headline">Web Developer Events Near You</p>
           </Col>
         </Row>
 

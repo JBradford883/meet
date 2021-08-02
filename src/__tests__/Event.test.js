@@ -20,7 +20,7 @@ describe('<Event /> component', () => {
   });
 
   test('renders event title', () => {
-    expect(EventWrapper.find('.name')).toHaveLength(1);
+    expect(EventWrapper.find('.event__Details')).toHaveLength(1);
   });
 
   // Simulates click to show less details

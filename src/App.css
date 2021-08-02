@@ -16,7 +16,7 @@ body {
 }
 
 .app-headline {
-  color: #663399;
+  font-size: 50px;
   font-family: roboto;
   font-weight: bold;
 }
