@@ -5,7 +5,7 @@ describe('show/hide an event details', () => {
   let page;
   beforeAll(async () => {
     jest.setTimeout(30000);
-    browser = await puppeteer.launch(); // Logic below replaces this line for visual broswer testing
+    browser = await puppeteer.launch(); // Logic below replaces this line for visual browser testing
 
     /*
     browser = await puppeteer.launch({

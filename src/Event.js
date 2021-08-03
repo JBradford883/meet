@@ -55,26 +55,3 @@ class Event extends Component {
 }
 export default Event;
 
-
-// const { event } = this.props;
-//     return (
-//       <div className="event-details">
-//         <h1 className="name">{event.summary}</h1>
-//         <p>{event.start.dateTime}</p>
-//         <p className="location">{event.location}</p>
-//         {this.state.showHideDetails && (
-//           <div className='event-details'>
-//             <h2>About event:</h2>
-//             <p>{event.description}</p>
-//           </div>
-//         )}
-
-//         <button
-//           className='event-button'
-//           onClick={() => this.handleShowHideButton()}>
-//           {!this.state.showHideDetails ? 'Show Details' : 'Hide Details'}
-//         </button>
-//       </div>
-//     );
-//   }
-// }
