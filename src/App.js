@@ -3,7 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
+import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { WarningAlert } from './Alert';
@@ -25,7 +25,9 @@ class App extends Component {
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get("code");
+
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
