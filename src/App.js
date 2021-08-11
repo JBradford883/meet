@@ -50,24 +50,23 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location, eventCount) => {
+  updateEvents = (location) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ? events.slice(0, this.state.numberOfEvents) :
+      const locationEvents = (location === 'all') ?
+        events :
         events.filter((event) => event.location === location);
-      if (this.mounted) {
-        this.setState({
-          events: locationEvents.slice(0, eventCount),
-          defaultLocation: location
-        });
-      }
+      const { numberOfEvents } = this.state;
+      this.setState({
+        events: locationEvents.slice(0, numberOfEvents)
+      });
     });
   }
 
   updateEventsLength(inputValue) {
+    const { defaultCity } = this.state
     this.setState({
       numberOfEvents: inputValue
     });
-    const { defaultCity } = this.state
     this.updateEvents(defaultCity, inputValue);
   }
 
@@ -90,7 +89,7 @@ class App extends Component {
 
         <Row>
           <Col className="NumberOfEventsWrapper text-white" md={12}>
-            <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEventsLength={(value) => this.updateEventsLength(value)} />
+            <NumberOfEvents updateEventsLength={(value) => this.updateEventsLength(value)} numberOfEvents={this.state.numberOfEvents} />
           </Col>
         </Row>
 
