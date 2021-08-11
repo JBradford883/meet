@@ -50,20 +50,21 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-        events :
+      const locationEvents = (location === 'all') ? events.slice(0, this.state.numberOfEvents) :
         events.filter((event) => event.location === location);
-      const { numberOfEvents } = this.state;
-      this.setState({
-        events: locationEvents.slice(0, numberOfEvents)
-      });
+      if (this.mounted) {
+        this.setState({
+          events: locationEvents.slice(0, eventCount),
+          defaultCity: location
+        });
+      }
     });
   }
 
   updateEventsLength(inputValue) {
-    const { defaultCity } = this.state
+    const { defaultCity } = this.state;
     this.setState({
       numberOfEvents: inputValue
     });
@@ -75,6 +76,7 @@ class App extends Component {
     return (
       <Container className="App bg-dark">
         <WarningAlert text={this.state.warningText} />
+
         <Row className="mb-1 text-white">
           <Col>
             <p className="app-headline">Web Developer Events Near You</p>
