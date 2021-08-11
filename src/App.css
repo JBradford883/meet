@@ -198,6 +198,6 @@ input[type="number"] {
 
 @media screen and (max-width: 600px) {
   .app-headline {
-    font-size:25px ;
+    font-size:35px ;
   }
 }
