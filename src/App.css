@@ -195,3 +195,9 @@ input[type="number"] {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .app-headline {
+    font-size:25px ;
+  }
+}
