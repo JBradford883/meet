@@ -168,12 +168,21 @@ input[type="number"] {
   align-items: center;
   flex-direction: column;
 }
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
+
 .recharts-surface {
   overflow: visible;
+}
+
+.EventChartWrapper {
+  background-color:#fff;
+  max-width:97%;
+  border-radius:5px;
+  margin:10px auto;
 }
 
 @media only screen and (min-width: 992px) {
