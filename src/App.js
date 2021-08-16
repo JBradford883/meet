@@ -92,12 +92,13 @@ class App extends Component {
 
         <Row>
           <Col>
-            <h1 className="app-headline">Web Developer Events Near You</h1>
+            <h1 className="app-headline text-white">Welcome to the Meet App!</h1>
           </Col>
         </Row>
 
         <Row>
-          <Col className="CitySearchWrapper mt-3">
+          <Col className="CitySearchWrapper mt-3 text-white">
+            <h6>Search for an event near you by city</h6>
             <CitySearch locations={locations} updateEvents={this.updateEvents} />
           </Col>
         </Row>
@@ -109,13 +110,13 @@ class App extends Component {
         </Row>
 
         <Row>
-          <Col>
+          <Col className="mb-2 p-2">
+            <h4 className="data-vis-wrapper__headline text-white">Events in each city</h4>
             <div className="data-vis-wrapper" md={12}>
-              <h4 className="data-vis-wrapper__headline">Events by genre</h4>
               <EventGenre events={events} />
-              <h4 className="data-vis-wrapper__headline">Events in each city</h4>
+
               <ResponsiveContainer height={400} >
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
+                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
                   <CartesianGrid />
                   <XAxis
                     type="category"

@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
 body {
+  font-family: roboto;
   background-image:url('./City.jpg');
   background-attachment: fixed;
   background-position: center;
@@ -172,17 +173,14 @@ input[type="number"] {
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
+  background-color:#fff;
+  max-width:95%;
+  border-radius:5px;
+  margin:10px auto;
 }
 
 .recharts-surface {
   overflow: visible;
-}
-
-.data-vis-wrapper {
-  background-color:#fff;
-  max-width:90%;
-  border-radius:5px;
-  margin:10px auto;
 }
 
 .data-vis-wrapper__headline {
