@@ -5,6 +5,14 @@ upcoming events.
 
 ---
 
+## **Starting up**
+
+The application was built using create-react-app boiler plate code. Run the app on your local computer using npm run start, to run the app on localhost:3000.
+
+To view the live app visit: https://jbradford883.github.io/meet/
+
+---
+
 ## **Key Features**
 
 - Filter events by city.
@@ -83,7 +91,7 @@ So that I can choose to see more/less events at one time
 
 ---
 
-### **Feature 4:** Use the app when offline
+### **Feature 4: Use the app when offline**
 
 As a user,  
 I should be able to use the app while being offline  
@@ -99,7 +107,7 @@ So that I can see the events I viewed the last time I was online
 **When** the user attempts to change the city, time range  
 **Then** the application will show an error message
 
-_____________________________________________________________________________________________
+---
 
 
 ### **Feature 5: Data visualization**
@@ -113,3 +121,40 @@ So that I know what events are coming up in each city
 **When** the users selects a specific city  
 **Then** the user can see a chart of the events upcoming in the selected city.  
 
+---
+
+## **Dependencies**
+
+- "@testing-library/jest-dom": "^5.14.1",
+- "@testing-library/react": "^11.2.7",
+- "@testing-library/user-event": "^12.8.3",
+- "atatus-spa": "^4.3.2",
+- "axios": "^0.21.1",
+- "moment": "^2.29.1",
+- "nprogress": "^0.2.0",
+- "react": "^17.0.2",
+- "react-bootstrap": "^1.6.1",
+- "react-dom": "^17.0.2",
+- "react-scripts": "4.0.3",
+- "recharts": "^2.1.0",
+- "web-vitals": "^0.2.4",
+- "workbox-background-sync": "^5.1.4",
+- "workbox-broadcast-update": "^5.1.4",
+- "workbox-cacheable-response": "^5.1.4",
+- "workbox-core": "^5.1.4",
+- "workbox-expiration": "^5.1.4",
+- "workbox-google-analytics": "^5.1.4",
+- "workbox-navigation-preload": "^5.1.4",
+- "workbox-precaching": "^5.1.4",
+- "workbox-range-requests": "^5.1.4",
+- "workbox-routing": "^5.1.4",
+- "workbox-strategies": "^5.1.4",
+- "workbox-streams": "^5.1.4"
+
+---
+## **Testing Libraries**
+
+- "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
+- "enzyme": "^3.11.0",
+- "jest-cucumber": "^3.0.1",
+- "puppeteer": "^10.1.0"
