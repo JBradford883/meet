@@ -97,7 +97,7 @@ class App extends Component {
         </Row>
 
         <Row>
-          <Col className="CitySearchWrapper mt-3 text-white">
+          <Col className="CitySearchWrapper mt-3">
             <h6>Search for an event near you by city</h6>
             <CitySearch locations={locations} updateEvents={this.updateEvents} />
           </Col>
