@@ -3,6 +3,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -84,34 +85,37 @@ class App extends Component {
 
   render() {
     if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+    const { locations, numberOfEvents, events } = this.state
     return (
       <Container className="App bg-dark">
         <WarningAlert text={this.state.warningText} />
 
-        <Row className="mb-1 text-white">
+        <Row>
           <Col>
-            <p className="app-headline">Web Developer Events Near You</p>
+            <h1 className="app-headline">Web Developer Events Near You</h1>
           </Col>
         </Row>
 
         <Row>
           <Col className="CitySearchWrapper mt-3">
-            <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+            <CitySearch locations={locations} updateEvents={this.updateEvents} />
           </Col>
         </Row>
 
         <Row>
           <Col className="NumberOfEventsWrapper text-white" md={12}>
-            <NumberOfEvents updateEventsLength={(value) => this.updateEventsLength(value)} numberOfEvents={this.state.numberOfEvents} />
+            <NumberOfEvents updateEventsLength={(value) => this.updateEventsLength(value)} numberOfEvents={numberOfEvents} />
           </Col>
         </Row>
 
         <Row>
-          <Col className="EventChartWrapper text-white" md={12}>
-            <div>
-              <h4>Events in each city</h4>
+          <Col>
+            <div className="data-vis-wrapper" md={12}>
+              <h4 className="data-vis-wrapper__headline">Events by genre</h4>
+              <EventGenre events={events} />
+              <h4 className="data-vis-wrapper__headline">Events in each city</h4>
               <ResponsiveContainer height={400} >
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 10 }}>
                   <CartesianGrid />
                   <XAxis
                     type="category"
@@ -133,7 +137,7 @@ class App extends Component {
 
         <Row>
           <Col className="EventListWrapper">
-            <EventList events={this.state.events} />
+            <EventList events={events} />
           </Col>
         </Row>
 
