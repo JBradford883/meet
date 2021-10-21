@@ -102,8 +102,10 @@ h6 {
 }
 
 .event-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0px;
+  justify-content: space-evenly;
 }
 
 .event-list-item {
